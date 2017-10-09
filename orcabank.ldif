@@ -1,3 +1,25 @@
+## ORGS
+dn: dc=orcabank,dc=com
+dc: orcabank
+objectclass: top
+objectclass: organization
+objectClass: dcObject
+o: OrcaBank Corporation
+description: Serving the Cetacian community since 1963
+
+
+## TEAMS
+dn: ou=mobile,dc=orcabank,dc=com
+objectClass: organizationalUnit
+ou: mobile
+
+dn: ou=payments,dc=orcabank,dc=com
+objectClass: organizationalUnit
+ou: payments
+
+
+## USERS
+
 dn: uid=billy,dc=example,dc=org
 uid: billy
 cn: billy
@@ -12,15 +34,6 @@ gidNumber: 14564100
 userPassword: docker123
 mail: billy@example.org
 gecos: Billy User
-
-
-dn: dc=orcabank,dc=com
-objectclass: top
-objectclass: organization
-objectClass: dcObject
-o: OrcaBank Corporation
-dc: orcabank
-description: Serving the Cetacian community since 1963
 
 
 dn: uid=markus,dc=example,dc=org
