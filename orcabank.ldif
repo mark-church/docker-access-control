@@ -30,7 +30,7 @@ ou: payments
 
 
 
-dn: uid=sri,payments,dc=example,dc=org
+dn: uid=sri,ou=payments,dc=example,dc=org
 uid: sri
 cn: sri
 objectClass: top
@@ -39,7 +39,7 @@ objectClass: inetOrgPerson
 userPassword: docker123
 mail: billy@example.org
 
-dn: uid=charlie,mobile,dc=example,dc=org
+dn: uid=charlie,ou=mobile,dc=example,dc=org
 uid: charlie
 cn: charlie
 objectClass: top
@@ -47,6 +47,15 @@ objectClass: posixAccount
 objectClass: inetOrgPerson
 userPassword: docker123
 mail: charlie@orcabank.com
+
+dn: uid=alex,ou=mobile,dc=orcabank,dc=com
+uid: alex
+cn: alex
+objectClass: top
+objectClass: posixAccount
+objectClass: inetOrgPerson
+userPassword: docker123
+mail: alex@orcabank.com
 
 
 
