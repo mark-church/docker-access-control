@@ -1,12 +1,11 @@
 ## ORGS
 dn: dc=orcabank,dc=com
-dc: orcabank
 objectclass: top
 objectclass: organization
 objectClass: dcObject
-o: OrcaBank Corporation
+o: orcabank
+dc: orcabank
 description: Serving the Cetacian community since 1963
-
 
 ## TEAMS
 dn: ou=mobile,dc=orcabank,dc=com
