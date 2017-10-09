@@ -1,0 +1,56 @@
+dn: uid=billy,dc=example,dc=org
+uid: billy
+cn: billy
+sn: 3
+objectClass: top
+objectClass: posixAccount
+objectClass: inetOrgPerson
+loginShell: /bin/bash
+homeDirectory: /home/billy
+uidNumber: 14583102
+gidNumber: 14564100
+userPassword: docker123
+mail: billy@example.org
+gecos: Billy User
+
+
+dn: dc=orcabank,dc=com
+objectclass: top
+objectclass: organization
+objectClass: dcObject
+o: OrcaBank Corporation
+dc: orcabank
+description: Serving the Cetacian community since 1963
+
+
+dn: uid=markus,dc=example,dc=org
+uid: markus
+cn: markus
+sn: 3
+objectClass: top
+objectClass: posixAccount
+objectClass: inetOrgPerson
+loginShell: /bin/bash
+homeDirectory: /home/billy
+uidNumber: 14583102
+gidNumber: 14564100
+userPassword: docker123
+mail: billy@example.org
+gecos: Billy User
+
+dn: uid=user2,dc=orcabank,dc=com
+uid: user2
+cn: user2
+sn: 3
+objectClass: top
+objectClass: posixAccount
+objectClass: inetOrgPerson
+loginShell: /bin/bash
+homeDirectory: /home/billy
+uidNumber: 14583102
+gidNumber: 14564100
+userPassword: docker123
+mail: billy@example.org
+gecos: Billy User
+
+
