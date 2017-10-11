@@ -1,0 +1,79 @@
+# LDIF Export for dc=example,dc=org
+# Server: openldap (openldap)
+# Search Scope: sub
+# Search Filter: (objectClass=*)
+# Total Entries: 21
+
+version: 1
+
+# Entry 1: ou=admins,dc=example,dc=org
+dn: ou=admins,dc=example,dc=org
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: admins
+
+
+# Entry 2: cn=ashley,ou=admins,dc=example,dc=org
+dn: cn=ashley,ou=admins,dc=example,dc=org
+changetype: add
+cn: ashley
+gidnumber: 501
+givenname: ashley
+homedirectory: /home/users/ashley
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: Tables
+uid: ashley
+uidnumber: 1002
+userpassword: docker123
+
+
+# Entry 3: ou=mobile,dc=example,dc=org
+dn: ou=mobile,dc=example,dc=org
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: mobile
+
+
+# Entry 4: cn=sri,ou=mobile,dc=example,dc=org
+dn: cn=sri,ou=mobile,dc=example,dc=org
+changetype: add
+cn: sri
+gidnumber: 500
+givenname: sri
+homedirectory: /home/users/sri
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: sri
+uid: sri
+uidnumber: 1011
+userpassword: docker123
+
+# Entry 5: ou=payments,dc=example,dc=org
+dn: ou=payments,dc=example,dc=org
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: payments
+
+# Entry 6: cn=grant,ou=mobile,dc=example,dc=org
+dn: cn=grant,ou=payments,dc=example,dc=org
+changetype: add
+cn: grant
+gidnumber: 500
+givenname: grant
+homedirectory: /home/users/grant
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: grant
+uid: grant
+uidnumber: 1011
+userpassword: docker123
