@@ -1,7 +1,11 @@
-version: '2'
+version: '3.2'
 services:
   openldap:
-    image: ahromis/openldap-bootstrap:latest
+    image: chrch/ldap:latest
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
     container_name: openldap
     environment:
       DEBUG: "false"

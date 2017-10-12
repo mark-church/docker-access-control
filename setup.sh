@@ -10,7 +10,7 @@ docker run --name orcabank-ldap --constraint "node.role=manager" -p 389:389 -p 6
 
 docker service create --name orcabank-ldap --constraint "node.role==manager" -p 389:389 -p 636:636 --detach --mount "type=bind,source=/docker-access-control,target=/ldap" osixia/openldap:1.1.9
 # Check users in LDAP
-docker exec openldap ldapsearch -x -h localhost -b dc=example,dc=org -D "cn=admin,dc=example,dc=org" -w fwZk1lsN5C7GU8
+docker exec openldap ldapsearch -x -h localhost -b dc=example,dc=org -D "cn=admin,dc=example,dc=org" -w IhZpDS8IwJ8X9L
 
 docker exec orcabank-ldap ldapsearch -x -h localhost -b dc=orcabank,dc=com -D "cn=admin,dc=example,dc=org" -w admin
 
