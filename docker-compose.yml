@@ -24,6 +24,8 @@ services:
       LDAP_SSL_HELPER_PREFIX: "ldap"
       LDAP_DOMAIN: "orcabank.com"
       LDAP_ORGANISATION: "OrcaBank Inc."
+      LDAP_READONLY_USER: "true"
+      
     volumes:
       - /var/lib/ldap
       - /etc/ldap/slapd.d

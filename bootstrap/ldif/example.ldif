@@ -1,4 +1,4 @@
-# LDIF Export for dc=example,dc=org
+# LDIF Export for dc=orcabank,dc=com
 # Server: openldap (openldap)
 # Search Scope: sub
 # Search Filter: (objectClass=*)
@@ -6,7 +6,31 @@
 
 version: 1
 
-######### OrcaBank
+# Entry 1: ou=admins,dc=orcabank,dc=com
+dn: ou=admins,dc=orcabank,dc=com
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: admins
+
+
+# Entry 2: cn=ashley,ou=admins,dc=orcabank,dc=com
+dn: cn=ashley,ou=admins,dc=orcabank,dc=com
+changetype: add
+cn: ashley admin
+gidnumber: 501
+givenname: ashley
+homedirectory: /home/users/ashley
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: Tables
+uid: ashley
+uidnumber: 1002
+userpassword: docker123
+
+
 # Entry 3: ou=mobile,dc=orcabank,dc=com
 dn: ou=mobile,dc=orcabank,dc=com
 changetype: add
@@ -15,19 +39,87 @@ objectclass: top
 ou: mobile
 
 
-# Entry 4: cn=mandy,ou=mobile,dc=orcabank,dc=com
-dn: cn=mandy,ou=mobile,dc=orcabank,dc=com
+# Entry 4: cn=mindi,ou=mobile,dc=orcabank,dc=com
+dn: cn=mindi,ou=mobile,dc=orcabank,dc=com
 changetype: add
-cn: mandy mobile developer
+cn: mindi mobile developer
 gidnumber: 500
-givenname: mandy
-homedirectory: /home/users/mandy
+givenname: mindi
+homedirectory: /home/users/mindi
 loginshell: /bin/sh
 objectclass: inetOrgPerson
 objectclass: posixAccount
 objectclass: top
-sn: mandy
-uid: mandy
+sn: mindi
+uid: mindi
 uidnumber: 1010
 userpassword: docker123
 
+# Entry 5: ou=payments,dc=orcabank,dc=com
+dn: ou=payments,dc=orcabank,dc=com
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: payments
+
+# Entry 6: cn=peter,ou=payments,dc=orcabank,dc=com
+dn: cn=peter,ou=payments,dc=orcabank,dc=com
+changetype: add
+cn: peter payments developer
+gidnumber: 500
+givenname: peter
+homedirectory: /home/users/peter
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: peter
+uid: peter
+uidnumber: 1012
+userpassword: docker123
+
+# Entry 7: ou=ops,dc=orcabank,dc=com
+dn: ou=ops,dc=orcabank,dc=com
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: ops
+
+# Entry 8: cn=omar,ou=payments,dc=orcabank,dc=com
+dn: cn=omar,ou=payments,dc=orcabank,dc=com
+changetype: add
+cn: omar ops engineer
+gidnumber: 500
+givenname: omar
+homedirectory: /home/users/omar
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: omar
+uid: omar
+uidnumber: 1013
+userpassword: docker123
+
+# Entry 7: ou=db,dc=orcabank,dc=com
+dn: ou=ops,dc=orcabank,dc=com
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: db
+
+# Entry 8: cn=dory,ou=db,dc=orcabank,dc=com
+dn: cn=dory,ou=db,dc=orcabank,dc=com
+changetype: add
+cn: dory ops engineer
+gidnumber: 500
+givenname: dory
+homedirectory: /home/users/dory
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: dory
+uid: dory
+uidnumber: 1013
+userpassword: docker123
