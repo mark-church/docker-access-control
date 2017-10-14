@@ -8,7 +8,7 @@ services:
           - node.role == manager
     environment:
       DEBUG: "false"
-      LDAP_ADMIN_PASSWORD: ""
+      LDAP_ADMIN_PASSWORD: "docker123"
       LDAP_LOG_LEVEL: "256"
       LDAP_BASE_DN: ""
       LDAP_BACKEND: "hdb"
@@ -22,6 +22,8 @@ services:
       LDAP_TLS_VERIFY_CLIENT: "never"
       LDAP_REMOVE_CONFIG_AFTER_SETUP: "false"
       LDAP_SSL_HELPER_PREFIX: "ldap"
+      LDAP_DOMAIN: "orcabank.com"
+      LDAP_ORGANISATION: "OrcaBank Inc."
     volumes:
       - /var/lib/ldap
       - /etc/ldap/slapd.d
@@ -29,4 +31,4 @@ services:
     ports:
       - "389:389"
       - "636:636"
-    hostname: "example.org"
+    hostname: "orcabank.com"

@@ -6,6 +6,7 @@
 
 version: 1
 
+
 # Entry 1: ou=admins,dc=example,dc=org
 dn: ou=admins,dc=example,dc=org
 changetype: add
@@ -17,7 +18,7 @@ ou: admins
 # Entry 2: cn=ashley,ou=admins,dc=example,dc=org
 dn: cn=ashley,ou=admins,dc=example,dc=org
 changetype: add
-cn: ashley
+cn: ashley admin
 gidnumber: 501
 givenname: ashley
 homedirectory: /home/users/ashley
@@ -39,20 +40,20 @@ objectclass: top
 ou: mobile
 
 
-# Entry 4: cn=sri,ou=mobile,dc=example,dc=org
-dn: cn=sri,ou=mobile,dc=example,dc=org
+# Entry 4: cn=mindi,ou=mobile,dc=example,dc=org
+dn: cn=mindi,ou=mobile,dc=example,dc=org
 changetype: add
-cn: sri
+cn: mindi mobile developer
 gidnumber: 500
-givenname: sri
-homedirectory: /home/users/sri
+givenname: mindi
+homedirectory: /home/users/mindi
 loginshell: /bin/sh
 objectclass: inetOrgPerson
 objectclass: posixAccount
 objectclass: top
-sn: sri
-uid: sri
-uidnumber: 1011
+sn: mindi
+uid: mindi
+uidnumber: 1010
 userpassword: docker123
 
 # Entry 5: ou=payments,dc=example,dc=org
@@ -62,18 +63,75 @@ objectclass: organizationalUnit
 objectclass: top
 ou: payments
 
-# Entry 6: cn=grant,ou=mobile,dc=example,dc=org
-dn: cn=grant,ou=payments,dc=example,dc=org
+# Entry 6: cn=peter,ou=payments,dc=example,dc=org
+dn: cn=peter,ou=payments,dc=example,dc=org
 changetype: add
-cn: grant
+cn: peter payments developer
 gidnumber: 500
-givenname: grant
-homedirectory: /home/users/grant
+givenname: peter
+homedirectory: /home/users/peter
 loginshell: /bin/sh
 objectclass: inetOrgPerson
 objectclass: posixAccount
 objectclass: top
-sn: grant
-uid: grant
-uidnumber: 1011
+sn: peter
+uid: peter
+uidnumber: 1012
 userpassword: docker123
+
+# Entry 7: ou=ops,dc=example,dc=org
+dn: ou=ops,dc=example,dc=org
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: ops
+
+# Entry 8: cn=omar,ou=payments,dc=example,dc=org
+dn: cn=omar,ou=payments,dc=example,dc=org
+changetype: add
+cn: omar ops engineer
+gidnumber: 500
+givenname: omar
+homedirectory: /home/users/omar
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: omar
+uid: omar
+uidnumber: 1013
+userpassword: docker123
+
+# Entry 7: ou=,dc=example,dc=org
+dn: ou=ops,dc=example,dc=org
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: ops
+
+######### OrcaBank
+
+# Entry 3: ou=mobile,dc=orcabank,dc=com
+dn: ou=mobile,dc=orcabank,dc=com
+changetype: add
+objectclass: organizationalUnit
+objectclass: top
+ou: mobile
+
+
+# Entry 4: cn=mandy,ou=mobile,dc=orcabank,dc=com
+dn: cn=mandy,ou=mobile,dc=orcabank,dc=com
+changetype: add
+cn: mandy mobile developer
+gidnumber: 500
+givenname: mandy
+homedirectory: /home/users/mandy
+loginshell: /bin/sh
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: mandy
+uid: mandy
+uidnumber: 1010
+userpassword: docker123
+

@@ -65,7 +65,7 @@ You will edit the following default values:
 
 - **Default Role For All Private Collections:** None
 - **LDAP Enabled:** Yes
-- **LDAP Server URL:** `ldaps://localhost:636`
+- **LDAP Server URL:** `ldap://localhost:389`
 - **Reader DN:** `cn=admin,dc=example,dc=org`
 - **Reader Password:** password
 - **Skip TLS Verification:** Checked
@@ -141,4 +141,4 @@ Collections are flexible security tools because they are hierarchical. For insta
 
 ## Lab Part 2 - Basic Access Control
 
-
+For Part 2 of this lab we are going to 

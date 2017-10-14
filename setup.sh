@@ -10,7 +10,7 @@ docker run --name orcabank-ldap --constraint "node.role=manager" -p 389:389 -p 6
 
 docker service create --name orcabank-ldap --constraint "node.role==manager" -p 389:389 -p 636:636 --detach --mount "type=bind,source=/docker-access-control,target=/ldap" osixia/openldap:1.1.9
 # Check users in LDAP
-docker exec openldap ldapsearch -x -h localhost -b dc=example,dc=org -D "cn=admin,dc=example,dc=org" -w IhZpDS8IwJ8X9L
+docker exec openldap ldapsearch -x -h localhost -b dc=example,dc=org -D "cn=adminorca,dc=example,dc=org" -w docker123
 
 docker exec orcabank-ldap ldapsearch -x -h localhost -b dc=orcabank,dc=com -D "cn=admin,dc=example,dc=org" -w admin
 
@@ -55,16 +55,11 @@ function basic-demo-setup() {
 
   echo -n "Inputing Users"
   token=$(curl -sk -d "{\"username\":\"$USER\",\"password\":\"$PASS\"}" https://${UCP}/auth/login | jq -r .auth_token) > /dev/null 2>&1
+  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"ashley\",\"password\":\"docker123\",\"first_name\":\"ashley admin\"}"
+  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"mindi\",\"password\":\"docker123\",\"first_name\":\"mindi mobile developer\"}"
+  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"peter\",\"password\":\"docker123\",\"first_name\":\"peter payments developer\"}"
+  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"omar\",\"password\":\"docker123\",\"first_name\":\"omar ops engineer\"}"
 
-  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"sri-mobile\",\"password\":\"docker123\",\"first_name\":\"sri mobile backend developer\"}"
-
-  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"ashley-payments\",\"password\":\"docker123\",\"first_name\":\"ashley payments developer\"}"
-
-  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"tim-ops\",\"password\":\"docker123\",\"first_name\":\"tim ops\"}"
-
-  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"angela-security\",\"password\":\"docker123\",\"first_name\":\"angela SecOps\"}"
-
-  curl -skX POST "https://${UCP}/api/accounts" -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json;charset=utf-8' -H "Authorization: Bearer $token" -d  "{\"role\":1,\"username\":\"andy\",\"password\":\"docker123\",\"first_name\":\"andy $USER\"}"
   echo "$GREEN" "[ok]" "$NORMAL"
 
   echo -n "Adding Users to Teams"
