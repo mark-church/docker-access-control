@@ -1,8 +1,8 @@
 #!/bin/bash
 
-UCP=35.161.219.20
+UCP=x.x.x.x
 USER=admin
-PASS=docker123
+PASS=pass
 
 # Run this on your UCP controller to set up LDAP backend
 docker run --name orcabank-ldap --constraint "node.role=manager" -p 389:389 -p 636:636 --detach -v /docker-access-control:/ldap osixia/openldap:1.1.9
